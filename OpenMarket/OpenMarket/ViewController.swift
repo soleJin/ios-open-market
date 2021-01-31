@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             }
         }
         
-        OpenMarketAPI.request(RequestType.loadItem(id: 1)) { (result: Result<ItemToGet, Error>) -> () in
+        OpenMarketAPI.request(RequestType.loadItem(id: 26)) { (result: Result<ItemToGet, Error>) -> () in
             switch result {
             case .success(let result):
                 print("상세설명 : \(result.descriptions)")

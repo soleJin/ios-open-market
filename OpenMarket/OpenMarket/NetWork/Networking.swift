@@ -8,23 +8,27 @@
 import Foundation
 
 enum TestError: Error {
-    case testerror
+    case nostatusCode
+    case nodata
+    case decodingError
+    case statusCodeError
+    case d
 }
 
 struct Network {
     private static func getResponseError(_ response: URLResponse?) -> Error? {
         guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
-            return TestError.testerror
+            return TestError.nostatusCode
         }
         switch statusCode {
         case 200..<300:
             return nil
         case 300..<400:
-            return TestError.testerror
+            return TestError.statusCodeError
         case 400..<500:
-            return TestError.testerror
+            return TestError.statusCodeError
         default:
-            return TestError.testerror
+            return TestError.statusCodeError
         }
     }
     
@@ -40,11 +44,11 @@ struct Network {
         }
         
         guard let data = data else {
-            return .failure(TestError.testerror)
+            return .failure(TestError.nodata)
         }
         
         guard let items = Parser.decodeData(type, data) else {
-            return .failure(TestError.testerror)
+            return .failure(TestError.decodingError)
         }
         return .success(items)
     }
