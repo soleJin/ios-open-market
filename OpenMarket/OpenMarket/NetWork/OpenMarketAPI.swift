@@ -17,6 +17,7 @@ class OpenMarketAPI {
             print("URL Error")
             return
         }
+        
         session.dataTask(with: url) { (data, response, error) in
             let result = Network.getResult(T.self, data: data, response: response, error: error)
             completionHandler(result)

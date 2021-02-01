@@ -12,7 +12,7 @@ enum TestError: Error {
     case nodata
     case decodingError
     case statusCodeError
-    case d
+    case df
 }
 
 struct Network {
