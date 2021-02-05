@@ -11,6 +11,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UIView!
     @IBOutlet weak var collectionView: UIView!
+    @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     typealias Page = Int
     var items: [Page: [Item]] = [:]
@@ -22,12 +23,14 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.isHidden = true
         if let list = tableView.subviews.first?.subviews.first as? UITableView {
             requestItems(page: 1) {
                 DispatchQueue.main.async {
                     list.reloadData() // TODO: 코드 Depth 줄이기.
                     self.spinner.stopAnimating()
+                    self.loadingView.isHidden = true
+                    self.navigationController?.navigationBar.isHidden = false
                 }
             }
         }

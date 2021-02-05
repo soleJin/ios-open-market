@@ -35,16 +35,26 @@
                                 <rect key="frame" x="188.5" y="456.5" width="37" height="37"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xM-Qr-Jd5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <segue destination="htR-mY-Kno" kind="embed" id="fmx-Qy-zFR"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yao-Vl-eER"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Xxq-lg-rWK" firstAttribute="leading" secondItem="yao-Vl-eER" secondAttribute="leading" id="1OO-Lp-vJl"/>
+                            <constraint firstItem="6xM-Qr-Jd5" firstAttribute="trailing" secondItem="yao-Vl-eER" secondAttribute="trailing" id="FAz-y5-quD"/>
+                            <constraint firstAttribute="bottom" secondItem="6xM-Qr-Jd5" secondAttribute="bottom" id="MMw-yV-ju5"/>
                             <constraint firstItem="yV1-ea-tBq" firstAttribute="leading" secondItem="yao-Vl-eER" secondAttribute="leading" id="TMs-mY-wJq"/>
                             <constraint firstItem="yV1-ea-tBq" firstAttribute="top" secondItem="yao-Vl-eER" secondAttribute="top" id="Uvc-EI-Js9"/>
+                            <constraint firstItem="6xM-Qr-Jd5" firstAttribute="top" secondItem="WLN-6g-9oj" secondAttribute="top" id="VWi-nT-u4M"/>
                             <constraint firstItem="ztc-cS-sXW" firstAttribute="centerY" secondItem="yao-Vl-eER" secondAttribute="centerY" id="WEK-ET-z6Q"/>
                             <constraint firstItem="Xxq-lg-rWK" firstAttribute="bottom" secondItem="yao-Vl-eER" secondAttribute="bottom" constant="34" id="b2b-56-x0I"/>
                             <constraint firstItem="Xxq-lg-rWK" firstAttribute="top" secondItem="yao-Vl-eER" secondAttribute="top" id="g21-46-oXV"/>
+                            <constraint firstItem="6xM-Qr-Jd5" firstAttribute="leading" secondItem="yao-Vl-eER" secondAttribute="leading" id="gCo-gN-03D"/>
                             <constraint firstItem="yV1-ea-tBq" firstAttribute="bottom" secondItem="yao-Vl-eER" secondAttribute="bottom" constant="34" id="hqp-kM-fIZ"/>
                             <constraint firstItem="yao-Vl-eER" firstAttribute="trailing" secondItem="Xxq-lg-rWK" secondAttribute="trailing" id="kzE-QF-uTh"/>
                             <constraint firstItem="ztc-cS-sXW" firstAttribute="centerX" secondItem="yao-Vl-eER" secondAttribute="centerX" id="uo4-Eu-uVa"/>
@@ -75,13 +85,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Xxq-lg-rWK" id="ILw-oG-mIy"/>
+                        <outlet property="loadingView" destination="6xM-Qr-Jd5" id="lqf-2S-fhM"/>
                         <outlet property="spinner" destination="ztc-cS-sXW" id="IEl-kH-Ehw"/>
                         <outlet property="tableView" destination="yV1-ea-tBq" id="gXg-co-kBd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJZ-oE-xkZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980" y="83.497536945812811"/>
+            <point key="canvasLocation" x="1979.7101449275365" y="83.035714285714278"/>
         </scene>
         <!--PostingView Controller-->
         <scene sceneID="reF-kZ-bvy">
@@ -356,8 +367,40 @@
             </objects>
             <point key="canvasLocation" x="2338" y="808"/>
         </scene>
+        <!--LaunchView Controller-->
+        <scene sceneID="e02-7L-k4O">
+            <objects>
+                <viewController id="htR-mY-Kno" userLabel="LaunchView Controller" customClass="LaunchViewController" customModule="OpenMarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H79-Lb-UhV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="fF3-7o-CCP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="r3s-oI-N1y">
+                                <rect key="frame" x="188.5" y="631" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="r3s-oI-N1y" firstAttribute="centerX" secondItem="H79-Lb-UhV" secondAttribute="centerX" id="6zB-Kr-dNd"/>
+                            <constraint firstAttribute="bottom" secondItem="r3s-oI-N1y" secondAttribute="bottom" constant="228" id="GTY-FW-pDk"/>
+                            <constraint firstAttribute="trailing" secondItem="fF3-7o-CCP" secondAttribute="trailing" id="JiM-SK-OSm"/>
+                            <constraint firstItem="fF3-7o-CCP" firstAttribute="leading" secondItem="H79-Lb-UhV" secondAttribute="leading" id="NpX-xF-WYe"/>
+                            <constraint firstItem="fF3-7o-CCP" firstAttribute="top" secondItem="H79-Lb-UhV" secondAttribute="top" id="XeK-eq-ctC"/>
+                            <constraint firstAttribute="bottom" secondItem="fF3-7o-CCP" secondAttribute="bottom" id="x70-mF-xNM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LvP-Tu-KuU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2005.7971014492755" y="-660.26785714285711"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Default" width="1239" height="2394"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="linkColor">

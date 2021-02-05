@@ -39,6 +39,7 @@
 		FD299EBC25CB7797005BF35E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD299EBB25CB7797005BF35E /* MainViewController.swift */; };
 		FD51327725C7F589000D8E91 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD51327625C7F589000D8E91 /* Networking.swift */; };
 		FD9250F225CDFACB00E90F18 /* PostingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9250F125CDFACB00E90F18 /* PostingItemViewController.swift */; };
+		FD9250F625CE04E200E90F18 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9250F525CE04E200E90F18 /* LaunchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		FD299EBB25CB7797005BF35E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FD51327625C7F589000D8E91 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		FD9250F125CDFACB00E90F18 /* PostingItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingItemViewController.swift; sourceTree = "<group>"; };
+		FD9250F525CE04E200E90F18 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 		FD299EB625CB5DBA005BF35E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FD9250F525CE04E200E90F18 /* LaunchViewController.swift */,
 				FD299EBB25CB7797005BF35E /* MainViewController.swift */,
 				FD09F4D625CB87D000462012 /* TableViewController.swift */,
 				FD09F4DA25CB87D900462012 /* CollectionViewController.swift */,
@@ -342,6 +345,7 @@
 				36861ADA25CBEB2B0052B091 /* ListCell.swift in Sources */,
 				FD253CBD25BF56D800525912 /* ItemToDelete.swift in Sources */,
 				FD253D0B25C0030000525912 /* Parser.swift in Sources */,
+				FD9250F625CE04E200E90F18 /* LaunchViewController.swift in Sources */,
 				36861A6925C0596F0052B091 /* ItemAfterDelete.swift in Sources */,
 				FD253CF325BFD28C00525912 /* URLManager.swift in Sources */,
 				FD09F4D725CB87D000462012 /* TableViewController.swift in Sources */,
