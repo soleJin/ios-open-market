@@ -383,6 +383,7 @@
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="cU9-ig-pB1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="r3s-oI-N1y" firstAttribute="centerX" secondItem="H79-Lb-UhV" secondAttribute="centerX" id="6zB-Kr-dNd"/>
