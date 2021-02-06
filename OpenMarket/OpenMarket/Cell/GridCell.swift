@@ -37,6 +37,13 @@ class GridCell: UICollectionViewCell {
         setStockText(count: item.stock)
     }
     
+    func setLayer(cell: GridCell) {
+        cell.layer.borderWidth = 2.0
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.cornerRadius = 10.0
+        
+    }
+    
     private func setStockText(count: Int) {
         if count == 0 {
             stockLabel.text = "품절"

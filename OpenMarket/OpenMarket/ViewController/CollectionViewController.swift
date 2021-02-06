@@ -37,6 +37,7 @@ extension CollectionViewController: UICollectionViewDataSource {
         }
         cell.tag = indexPath.item
         cell.setContents(with: item)
+        cell.setLayer(cell: cell)
         return cell
     }
 }

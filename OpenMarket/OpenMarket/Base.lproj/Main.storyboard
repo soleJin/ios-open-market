@@ -273,13 +273,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qE3-Da-FKy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="198" height="198"/>
+                                                    <rect key="frame" x="10" y="10" width="178" height="178"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="qE3-Da-FKy" secondAttribute="height" multiplier="1:1" id="cWn-QP-XmQ"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oDN-y8-2PE">
-                                                    <rect key="frame" x="30.5" y="201.5" width="137" height="96.5"/>
+                                                    <rect key="frame" x="30.5" y="186.5" width="137" height="96.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOV-co-Zic">
                                                             <rect key="frame" x="49.5" y="0.0" width="38.5" height="30"/>
@@ -316,10 +316,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="oDN-y8-2PE" firstAttribute="centerX" secondItem="CYR-mf-DAE" secondAttribute="centerX" id="3jK-n2-cT2"/>
-                                                <constraint firstItem="oDN-y8-2PE" firstAttribute="bottom" secondItem="qE3-Da-FKy" secondAttribute="bottom" constant="100" id="7nP-8X-yPA"/>
-                                                <constraint firstItem="qE3-Da-FKy" firstAttribute="top" secondItem="CYR-mf-DAE" secondAttribute="top" id="FMG-Xj-WKc"/>
-                                                <constraint firstItem="qE3-Da-FKy" firstAttribute="leading" secondItem="CYR-mf-DAE" secondAttribute="leading" id="R1O-cJ-tNS"/>
-                                                <constraint firstAttribute="trailing" secondItem="qE3-Da-FKy" secondAttribute="trailing" id="yHu-qo-L3f"/>
+                                                <constraint firstItem="oDN-y8-2PE" firstAttribute="width" secondItem="qE3-Da-FKy" secondAttribute="width" multiplier="0.769663" id="3rd-hK-m6c"/>
+                                                <constraint firstItem="qE3-Da-FKy" firstAttribute="top" secondItem="CYR-mf-DAE" secondAttribute="top" constant="10" id="FMG-Xj-WKc"/>
+                                                <constraint firstItem="qE3-Da-FKy" firstAttribute="leading" secondItem="CYR-mf-DAE" secondAttribute="leading" constant="10" id="R1O-cJ-tNS"/>
+                                                <constraint firstAttribute="bottom" secondItem="oDN-y8-2PE" secondAttribute="bottom" constant="10" id="VTj-RP-ECb"/>
+                                                <constraint firstAttribute="trailing" secondItem="qE3-Da-FKy" secondAttribute="trailing" constant="10" id="yHu-qo-L3f"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="198" height="293"/>
