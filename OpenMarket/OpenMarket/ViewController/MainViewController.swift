@@ -7,12 +7,19 @@
 
 import UIKit
 
+typealias Page = Int
+typealias Response = [Page: [Item]]
+
+protocol SendDataDelegate: AnyObject {
+    func didSendData(_ data: Response)
+}
+
 class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UIView!
     @IBOutlet weak var collectionView: UIView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    typealias Page = Int
+    
     var items: [Page: [Item]] = [:]
 //    var itemsCount: Int {
 //        return items.reduce(0) { currentCount, next in
