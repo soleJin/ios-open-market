@@ -50,6 +50,13 @@ class MainViewController: UIViewController {
 //        }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowListCell" {
+            let delegate = segue.destination as! SendDataDelegate
+            self.listCellDelegate = delegate
+        }
+    }
+    
     @IBAction func switchView(_ sender: UISegmentedControl){
         if sender.selectedSegmentIndex == 0 {
             tableView.isHidden = false
