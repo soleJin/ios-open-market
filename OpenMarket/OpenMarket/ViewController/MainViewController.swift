@@ -24,7 +24,7 @@ class MainViewController: UIViewController {
     weak var gridCellDelegate: SendDataDelegate?
     // 이 때 weak의 의미와 왜 프로토콜이 클래스에서만 채택할 수 있게 하는지 잘 생각해보자ㅋ
     
-    var items: [Page: [Item]] = [:]
+    var items: Response = [:]
 //    var itemsCount: Int {
 //        return items.reduce(0) { currentCount, next in
 //            currentCount + next.value.count
@@ -33,6 +33,11 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+            
+        requestItems(page: 1) { items in
+            self.listCellDelegate?.didSendData(items)
+        }
+        
 //        if let list = tableView.subviews.first?.subviews.first as? UITableView {
 //            requestItems(page: 1) {
 //                DispatchQueue.main.async {
@@ -75,16 +80,16 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController {
-    func requestItems(page: Int, _ completionHandler: @escaping () -> Void) {
+    func requestItems(page: Int, _ completionHandler: @escaping (_ data: Response) -> Void) {
         guard self.items[page] == nil else {
-            completionHandler()
+            print("페이지를 입력하세요")
             return
         }
         OpenMarketAPI.request(.loadItemList(page: page)) { (result: Result<ItemsToGet, Error>) in
             switch result {
             case .success(let data):
                 self.items.updateValue(data.items, forKey: data.page)
-                completionHandler()
+                completionHandler(self.items)
             case .failure(let error):
                 print(error.localizedDescription)
             }

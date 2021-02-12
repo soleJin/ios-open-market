@@ -22,6 +22,7 @@ class TableViewController: UIViewController {
 extension TableViewController: SendDataDelegate {
     func didSendData(_ data: Response) {
         items = data
+        print(items)
     }
 }
 
