@@ -14,45 +14,44 @@ class MainViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     typealias Page = Int
     var items: [Page: [Item]] = [:]
-    var itemsCount: Int {
-        return items.reduce(0) { currentCount, next in
-            currentCount + next.value.count
-        }
-    }
+//    var itemsCount: Int {
+//        return items.reduce(0) { currentCount, next in
+//            currentCount + next.value.count
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let list = tableView.subviews.first?.subviews.first as? UITableView {
-            requestItems(page: 1) {
-                DispatchQueue.main.async {
-                    list.reloadData() // TODO: 코드 Depth 줄이기.
-                    self.spinner.stopAnimating()
-                }
-            }
-        }
-        if let list = collectionView.subviews.first?.subviews.first as? UICollectionView {
-            requestItems(page: 1) {
-                DispatchQueue.main.async {
-                    list.reloadData()
-                }
-            }
-        }
+//        if let list = tableView.subviews.first?.subviews.first as? UITableView {
+//            requestItems(page: 1) {
+//                DispatchQueue.main.async {
+//                    list.reloadData() // TODO: 코드 Depth 줄이기.
+//                    self.spinner.stopAnimating()
+//                }
+//            }
+//        }
+//        if let list = collectionView.subviews.first?.subviews.first as? UICollectionView {
+//            requestItems(page: 1) {
+//                DispatchQueue.main.async {
+//                    list.reloadData()
+//                }
+//            }
+//        }
     }
     
     @IBAction func switchView(_ sender: UISegmentedControl){
         if sender.selectedSegmentIndex == 0 {
             tableView.isHidden = false
-            if let list = tableView.subviews.first?.subviews.first as? UITableView {
-                list.reloadData()
-            }
+//            if let list = tableView.subviews.first?.subviews.first as? UITableView {
+//                list.reloadData()
+//            }
             collectionView.isHidden = true
         } else {
             tableView.isHidden = true
             collectionView.isHidden = false
-            if let list = collectionView.subviews.first?.subviews.first as? UICollectionView {
-                list.reloadData()
-            }
+//            if let list = collectionView.subviews.first?.subviews.first as? UICollectionView {
+//                list.reloadData()
+//            }
         }
     }
 }
@@ -73,14 +72,13 @@ extension MainViewController {
             }
         }
     }
-    
-    func getItem(_ row: Int) -> Item? {
-        let page = row / 20 + 1
-        let n = row % 20
-        if let itemsOfPage = items[page] {
-            return itemsOfPage[n]
-        }
-        return nil
-    }
+//    func getItem(_ row: Int) -> Item? {
+//        let page = row / 20 + 1
+//        let n = row % 20
+//        if let itemsOfPage = items[page] {
+//            return itemsOfPage[n]
+//        }
+//        return nil
+//    }
 }
 
