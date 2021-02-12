@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
     
     weak var listCellDelegate: SendDataDelegate?
     weak var gridCellDelegate: SendDataDelegate?
-    // 이 때 weak의 의미와 왜 프로토콜이 클래스에서만 채택할 수 있게 하는지 잘 생각해보자
+    // 이 때 weak의 의미와 왜 프로토콜이 클래스에서만 채택할 수 있게 하는지 잘 생각해보자ㅋ
     
     var items: [Page: [Item]] = [:]
 //    var itemsCount: Int {

@@ -9,13 +9,20 @@ import UIKit
 
 class TableViewController: UIViewController {
     
+    var items: Response = [:]
+    
     @IBOutlet weak var tableView: UITableView!
 //    var page: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+}
+
+extension TableViewController: SendDataDelegate {
+    func didSendData(_ data: Response) {
+        items = data
+    }
 }
 
 extension TableViewController: UITableViewDelegate {
